@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06D6B4B1406262DC61433161 /* Pods_SuugarSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63048594C66E6A14C944A81F /* Pods_SuugarSample.framework */; };
 		76BEC3B822478690007D2711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEC3B722478690007D2711 /* AppDelegate.swift */; };
 		76BEC3BA22478690007D2711 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEC3B922478690007D2711 /* ViewController.swift */; };
 		76BEC3BD22478690007D2711 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76BEC3BB22478690007D2711 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4FAAA2367A4D6420F05D29A9 /* Pods-SuugarSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuugarSample.release.xcconfig"; path = "Target Support Files/Pods-SuugarSample/Pods-SuugarSample.release.xcconfig"; sourceTree = "<group>"; };
+		63048594C66E6A14C944A81F /* Pods_SuugarSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuugarSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEC3B422478690007D2711 /* SuugarSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuugarSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEC3B722478690007D2711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76BEC3B922478690007D2711 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		76BEC3BE22478691007D2711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76BEC3C122478691007D2711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76BEC3C322478691007D2711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E7021418952A83F716CF2C3 /* Pods-SuugarSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuugarSample.debug.xcconfig"; path = "Target Support Files/Pods-SuugarSample/Pods-SuugarSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06D6B4B1406262DC61433161 /* Pods_SuugarSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10973D4432A912B6A96D17A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63048594C66E6A14C944A81F /* Pods_SuugarSample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		47C83C1A62F51533E07D2208 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E7021418952A83F716CF2C3 /* Pods-SuugarSample.debug.xcconfig */,
+				4FAAA2367A4D6420F05D29A9 /* Pods-SuugarSample.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		76BEC3AB22478690007D2711 = {
 			isa = PBXGroup;
 			children = (
 				76BEC3B622478690007D2711 /* SuugarSample */,
 				76BEC3B522478690007D2711 /* Products */,
+				47C83C1A62F51533E07D2208 /* Pods */,
+				10973D4432A912B6A96D17A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76BEC3C622478691007D2711 /* Build configuration list for PBXNativeTarget "SuugarSample" */;
 			buildPhases = (
+				1159BE3F05B587927D9D040E /* [CP] Check Pods Manifest.lock */,
 				76BEC3B022478690007D2711 /* Sources */,
 				76BEC3B122478690007D2711 /* Frameworks */,
 				76BEC3B222478690007D2711 /* Resources */,
+				B3221C3468FC6D4335E5AD9E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,6 +155,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1159BE3F05B587927D9D040E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SuugarSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3221C3468FC6D4335E5AD9E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SuugarSample/Pods-SuugarSample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Suugar/Suugar.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Suugar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SuugarSample/Pods-SuugarSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		76BEC3B022478690007D2711 /* Sources */ = {
@@ -279,6 +353,7 @@
 		};
 		76BEC3C722478691007D2711 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E7021418952A83F716CF2C3 /* Pods-SuugarSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +372,7 @@
 		};
 		76BEC3C822478691007D2711 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FAAA2367A4D6420F05D29A9 /* Pods-SuugarSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

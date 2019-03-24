@@ -1,0 +1,21 @@
+PODS:
+  - Suugar (0.1.0)
+
+DEPENDENCIES:
+  - Suugar (from `https://github.com/thedoritos/suugar`)
+
+EXTERNAL SOURCES:
+  Suugar:
+    :git: https://github.com/thedoritos/suugar
+
+CHECKOUT OPTIONS:
+  Suugar:
+    :commit: 472926154b1ba00ebe7e3eebb1283c40738d6121
+    :git: https://github.com/thedoritos/suugar
+
+SPEC CHECKSUMS:
+  Suugar: 1b2ca9bb6e6eff3e1d0b1e6e987e555cd3614997
+
+PODFILE CHECKSUM: 87e5491e189e452d333ad6143a17c48479ac2246
+
+COCOAPODS: 1.6.1
