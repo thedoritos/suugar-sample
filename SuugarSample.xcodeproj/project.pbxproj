@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		06D6B4B1406262DC61433161 /* Pods_SuugarSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63048594C66E6A14C944A81F /* Pods_SuugarSample.framework */; };
 		76BEC3B822478690007D2711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEC3B722478690007D2711 /* AppDelegate.swift */; };
-		76BEC3BA22478690007D2711 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEC3B922478690007D2711 /* ViewController.swift */; };
-		76BEC3BD22478690007D2711 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76BEC3BB22478690007D2711 /* Main.storyboard */; };
+		76BEC3BA22478690007D2711 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEC3B922478690007D2711 /* TodoListViewController.swift */; };
 		76BEC3BF22478691007D2711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76BEC3BE22478691007D2711 /* Assets.xcassets */; };
 		76BEC3C222478691007D2711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76BEC3C022478691007D2711 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -20,8 +19,7 @@
 		63048594C66E6A14C944A81F /* Pods_SuugarSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuugarSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEC3B422478690007D2711 /* SuugarSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuugarSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEC3B722478690007D2711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		76BEC3B922478690007D2711 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		76BEC3BC22478690007D2711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		76BEC3B922478690007D2711 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		76BEC3BE22478691007D2711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76BEC3C122478691007D2711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76BEC3C322478691007D2711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,7 +52,6 @@
 				9E7021418952A83F716CF2C3 /* Pods-SuugarSample.debug.xcconfig */,
 				4FAAA2367A4D6420F05D29A9 /* Pods-SuugarSample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -80,8 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				76BEC3B722478690007D2711 /* AppDelegate.swift */,
-				76BEC3B922478690007D2711 /* ViewController.swift */,
-				76BEC3BB22478690007D2711 /* Main.storyboard */,
+				76BEC3B922478690007D2711 /* TodoListViewController.swift */,
 				76BEC3BE22478691007D2711 /* Assets.xcassets */,
 				76BEC3C022478691007D2711 /* LaunchScreen.storyboard */,
 				76BEC3C322478691007D2711 /* Info.plist */,
@@ -150,7 +146,6 @@
 			files = (
 				76BEC3C222478691007D2711 /* LaunchScreen.storyboard in Resources */,
 				76BEC3BF22478691007D2711 /* Assets.xcassets in Resources */,
-				76BEC3BD22478690007D2711 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,12 +183,30 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SuugarSample/Pods-SuugarSample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Suugar/Suugar.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Suugar.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,7 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76BEC3BA22478690007D2711 /* ViewController.swift in Sources */,
+				76BEC3BA22478690007D2711 /* TodoListViewController.swift in Sources */,
 				76BEC3B822478690007D2711 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,14 +229,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		76BEC3BB22478690007D2711 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				76BEC3BC22478690007D2711 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		76BEC3C022478691007D2711 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
