@@ -514,10 +514,17 @@ PODS:
     - MotionInterchange (~> 1.6)
   - MotionInterchange (1.6.0)
   - MotionTransitioning (5.0.0)
+  - RxAtomic (4.4.2)
+  - RxCocoa (4.4.2):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.4.2):
+    - RxAtomic (>= 4.4.2, ~> 4.4)
   - Suugar (0.1.0)
 
 DEPENDENCIES:
   - MaterialComponents
+  - RxCocoa
+  - RxSwift
   - Suugar (from `https://github.com/thedoritos/suugar`)
 
 SPEC REPOS:
@@ -528,6 +535,9 @@ SPEC REPOS:
     - MotionAnimator
     - MotionInterchange
     - MotionTransitioning
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
 
 EXTERNAL SOURCES:
   Suugar:
@@ -545,8 +555,11 @@ SPEC CHECKSUMS:
   MotionAnimator: ee16aa30567c5bae0fb2750c132915829cfaaf8a
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   MotionTransitioning: 23d25edc2f4606efb922403cbac6d81af37aa33a
+  RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
+  RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
+  RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   Suugar: 1b2ca9bb6e6eff3e1d0b1e6e987e555cd3614997
 
-PODFILE CHECKSUM: 9de8dc3c25ec92008737eac504f2d9bdbab50a01
+PODFILE CHECKSUM: d5c1249d7f2401e5579e679e48e8ce799510a7bf
 
 COCOAPODS: 1.6.1

@@ -5,5 +5,7 @@ target 'SuugarSample' do
 
   pod 'Suugar', git: 'https://github.com/thedoritos/suugar'
   pod 'MaterialComponents'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end
 
