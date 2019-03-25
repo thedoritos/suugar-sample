@@ -9,9 +9,14 @@ import UIKit
 import Suugar
 import MaterialComponents
 import Stevia
+import RxSwift
+import RxCocoa
 
 class TodoListViewController: UIViewController {
-    private let todoList: [String] = [
+    private weak var table: UITableView!
+    private let disposeBag = DisposeBag()
+
+    private var todoList: [String] = [
         "Shirobako",
         "Tari Tari",
         "Hanasaku Iroha",
@@ -29,7 +34,7 @@ class TodoListViewController: UIViewController {
         ui {
             $0.backgroundColor = .white
 
-            $0.table {
+            table = $0.table {
                 $0.freeFrame()
                 $0.fillContainer()
 
@@ -46,6 +51,12 @@ class TodoListViewController: UIViewController {
                 $0.Bottom == safeArea.Bottom - 16
 
                 $0.setImage(UIImage(named: "baseline_add_white_24pt"), for: .normal)
+
+                $0.rx.tap.subscribe { [unowned self] _ in
+                    self.todoList = ["New Anime"] + self.todoList
+                    let indexPath = IndexPath(row: 0, section: 0)
+                    self.table.insertRows(at: [indexPath], with: .fade)
+                }.disposed(by: disposeBag)
             }
         }
     }
