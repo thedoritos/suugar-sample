@@ -9,5 +9,6 @@ target 'SuugarSample' do
   pod 'SteviaLayout'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxDataSources'
 end
 

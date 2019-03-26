@@ -1,4 +1,5 @@
 PODS:
+  - Differentiator (3.1.0)
   - MaterialComponents (79.3.0):
     - MaterialComponents/ActionSheet (= 79.3.0)
     - MaterialComponents/ActivityIndicator (= 79.3.0)
@@ -517,6 +518,10 @@ PODS:
   - RxAtomic (4.4.2)
   - RxCocoa (4.4.2):
     - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
   - RxSwift (4.4.2):
     - RxAtomic (>= 4.4.2, ~> 4.4)
   - SteviaLayout (4.4.4)
@@ -525,12 +530,14 @@ PODS:
 DEPENDENCIES:
   - MaterialComponents
   - RxCocoa
+  - RxDataSources
   - RxSwift
   - SteviaLayout
   - Suugar (from `../Suugar`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Differentiator
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
@@ -539,6 +546,7 @@ SPEC REPOS:
     - MotionTransitioning
     - RxAtomic
     - RxCocoa
+    - RxDataSources
     - RxSwift
     - SteviaLayout
 
@@ -547,6 +555,7 @@ EXTERNAL SOURCES:
     :path: "../Suugar"
 
 SPEC CHECKSUMS:
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   MaterialComponents: b5069f73fccb7c71e1be8b54fd791cc99320f467
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
@@ -555,10 +564,11 @@ SPEC CHECKSUMS:
   MotionTransitioning: 23d25edc2f4606efb922403cbac6d81af37aa33a
   RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   SteviaLayout: 523469269059f2c6da02820bb2ff28a5fe0780aa
   Suugar: 8f12fa11073be9f1e030fa56e996bec001d7536a
 
-PODFILE CHECKSUM: b152c0062a5cc2dec5116deacc2c26eaf3fd64c5
+PODFILE CHECKSUM: ceb451f7b555fbb20f89d4b7a30d3c97d81ada14
 
 COCOAPODS: 1.6.1
