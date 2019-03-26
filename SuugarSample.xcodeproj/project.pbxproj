@@ -12,6 +12,7 @@
 		76BEC3BA22478690007D2711 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEC3B922478690007D2711 /* TodoListViewController.swift */; };
 		76BEC3BF22478691007D2711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76BEC3BE22478691007D2711 /* Assets.xcassets */; };
 		76BEC3C222478691007D2711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76BEC3C022478691007D2711 /* LaunchScreen.storyboard */; };
+		76BEC3D0224A3BF7007D2711 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BEC3CF224A3BF7007D2711 /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		76BEC3BE22478691007D2711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76BEC3C122478691007D2711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76BEC3C322478691007D2711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76BEC3CF224A3BF7007D2711 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		9E7021418952A83F716CF2C3 /* Pods-SuugarSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuugarSample.debug.xcconfig"; path = "Target Support Files/Pods-SuugarSample/Pods-SuugarSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				76BEC3BE22478691007D2711 /* Assets.xcassets */,
 				76BEC3C022478691007D2711 /* LaunchScreen.storyboard */,
 				76BEC3C322478691007D2711 /* Info.plist */,
+				76BEC3CF224A3BF7007D2711 /* Todo.swift */,
 			);
 			path = SuugarSample;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				76BEC3BA22478690007D2711 /* TodoListViewController.swift in Sources */,
 				76BEC3B822478690007D2711 /* AppDelegate.swift in Sources */,
+				76BEC3D0224A3BF7007D2711 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
