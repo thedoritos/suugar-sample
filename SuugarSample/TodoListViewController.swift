@@ -8,9 +8,11 @@
 import UIKit
 import Suugar
 import Stevia
+import MaterialComponents
 
 class TodoListViewController: UIViewController {
     private weak var table: UITableView!
+
     private var todoList: [Todo] = [
         Todo(id: "0", title: "Shirobako"),
         Todo(id: "1", title: "Tari Tari"),
@@ -32,6 +34,16 @@ class TodoListViewController: UIViewController {
                 $0.estimatedRowHeight = UITableView.automaticDimension
                 $0.register(UITableViewCell.self, forCellReuseIdentifier: "Todo")
                 $0.dataSource = self
+            }
+
+            $0.composite(of: MDCFloatingButton.self) {
+                let safeArea = self.view.safeAreaLayoutGuide
+                $0.freeFrame()
+                $0.size(56)
+                $0.Right == safeArea.Right - 16
+                $0.Bottom == safeArea.Bottom - 16
+
+                $0.setImage(UIImage(named: "baseline_add_white_24pt"), for: .normal)
             }
         }
     }
