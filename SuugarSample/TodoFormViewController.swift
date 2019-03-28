@@ -13,6 +13,8 @@ import RxSwift
 import RxCocoa
 
 class TodoFormViewController: UIViewController {
+    private weak var contentView: UIView!
+
     private weak var titleInput: MDCTextField!
     private weak var dueDateInput: MDCTextField!
     private weak var noteInput: MDCMultilineTextField!
@@ -46,6 +48,13 @@ class TodoFormViewController: UIViewController {
         return disposable
     }
 
+    private let fillHorizontallyInSafeArea: SuugarBlock = {
+        guard let superView = $0.superview else { return }
+        $0.Left == superView.Left + superView.safeAreaInsets.left
+        $0.Right == superView.Right + superView.safeAreaInsets.right
+        $0.Width == superView.Width - (superView.safeAreaInsets.left + superView.safeAreaInsets.right)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,11 +65,10 @@ class TodoFormViewController: UIViewController {
                 $0.freeFrame()
                 $0.fillContainer()
 
-                // ContentView
-                $0.view {
+                contentView = $0.view {
                     $0.freeFrame()
-                    $0.fillContainer()
-                    $0.Width == $0.superview!.Width
+                    $0.fillVertically()
+                    fillHorizontallyInSafeArea($0)
 
                     $0.vstack {
                         $0.freeFrame()
@@ -87,5 +95,10 @@ class TodoFormViewController: UIViewController {
         titleController = MDCTextInputControllerOutlined(textInput: titleInput)
         dueDateController = MDCTextInputControllerOutlined(textInput: dueDateInput)
         noteController = MDCTextInputControllerOutlinedTextArea(textInput: noteInput)
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        contentView.style(fillHorizontallyInSafeArea)
     }
 }
