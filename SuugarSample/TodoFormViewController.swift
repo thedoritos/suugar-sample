@@ -28,31 +28,31 @@ class TodoFormViewController: UIViewController {
     private let applyPicker: SuugarFunc<UITextField, Disposable> = {
         let picker = UIDatePicker()
         picker.datePickerMode = .date
-
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        let disposable = picker.rx.date
-            .map { formatter.string(from: $0) }
-            .bind(to: $0.rx.text)
-
         $0.inputView = picker
 
         let pickerToolbar = UIToolbar()
         pickerToolbar.sizeToFit()
         pickerToolbar.items = [
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(title: "Done", style: .done, target: $0, action: #selector($0.resignFirstResponder))
+            UIBarButtonItem(title: "Done", style: .done, target: $0,
+                            action: #selector($0.resignFirstResponder))
         ]
         $0.inputAccessoryView = pickerToolbar
 
-        return disposable
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        return picker.rx.date
+            .map { formatter.string(from: $0) }
+            .bind(to: $0.rx.text)
     }
 
     private let fillHorizontallyInSafeArea: SuugarBlock = {
         guard let superView = $0.superview else { return }
-        $0.Left == superView.Left + superView.safeAreaInsets.left
-        $0.Right == superView.Right + superView.safeAreaInsets.right
-        $0.Width == superView.Width - (superView.safeAreaInsets.left + superView.safeAreaInsets.right)
+        let inset = superView.safeAreaInsets
+
+        $0.Left == superView.Left + inset.left
+        $0.Right == superView.Right + inset.right
+        $0.Width == superView.Width - (inset.left + inset.right)
     }
 
     override func viewDidLoad() {
