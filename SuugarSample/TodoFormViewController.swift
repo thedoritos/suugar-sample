@@ -21,7 +21,30 @@ class TodoFormViewController: UIViewController {
     private var dueDateController: MDCTextInputControllerOutlined!
     private var noteController: MDCTextInputControllerOutlinedTextArea!
 
-    private let dispoaseBag = DisposeBag()
+    private let disposeBag = DisposeBag()
+
+    private let applyPicker: SuugarFunc<UITextField, Disposable> = {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .date
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let disposable = picker.rx.date
+            .map { formatter.string(from: $0) }
+            .bind(to: $0.rx.text)
+
+        $0.inputView = picker
+
+        let pickerToolbar = UIToolbar()
+        pickerToolbar.sizeToFit()
+        pickerToolbar.items = [
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(title: "Done", style: .done, target: $0, action: #selector($0.resignFirstResponder))
+        ]
+        $0.inputAccessoryView = pickerToolbar
+
+        return disposable
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,25 +73,7 @@ class TodoFormViewController: UIViewController {
                         dueDateInput = $0.composite() {
                             $0.placeholder = "Due Date"
 
-                            let picker = UIDatePicker()
-                            picker.datePickerMode = .date
-
-                            let formatter = DateFormatter()
-                            formatter.dateFormat = "yyyy/MM/dd"
-                            picker.rx.date
-                                .map { formatter.string(from: $0) }
-                                .bind(to: $0.rx.text)
-                                .disposed(by: dispoaseBag)
-
-                            $0.inputView = picker
-
-                            let pickerToolbar = UIToolbar()
-                            pickerToolbar.sizeToFit()
-                            pickerToolbar.items = [
-                                UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
-                                UIBarButtonItem(title: "Done", style: .done, target: $0, action: #selector($0.resignFirstResponder))
-                            ]
-                            $0.inputAccessoryView = pickerToolbar
+                            applyPicker($0).disposed(by: disposeBag)
                         }
 
                         noteInput = $0.composite() {
