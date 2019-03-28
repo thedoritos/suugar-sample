@@ -15,11 +15,11 @@ import RxCocoa
 class TodoFormViewController: UIViewController {
     private weak var titleInput: MDCTextField!
     private weak var dueDateInput: MDCTextField!
-    private weak var descriptionInput: MDCMultilineTextField!
+    private weak var noteInput: MDCMultilineTextField!
 
     private var titleController: MDCTextInputControllerOutlined!
     private var dueDateController: MDCTextInputControllerOutlined!
-    private var descriptionController: MDCTextInputControllerOutlinedTextArea!
+    private var noteController: MDCTextInputControllerOutlinedTextArea!
 
     private let dispoaseBag = DisposeBag()
 
@@ -71,7 +71,7 @@ class TodoFormViewController: UIViewController {
                             $0.inputAccessoryView = pickerToolbar
                         }
 
-                        descriptionInput = $0.composite() {
+                        noteInput = $0.composite() {
                             $0.placeholder = "Note"
                         }
                     }
@@ -81,6 +81,6 @@ class TodoFormViewController: UIViewController {
 
         titleController = MDCTextInputControllerOutlined(textInput: titleInput)
         dueDateController = MDCTextInputControllerOutlined(textInput: dueDateInput)
-        descriptionController = MDCTextInputControllerOutlinedTextArea(textInput: descriptionInput)
+        noteController = MDCTextInputControllerOutlinedTextArea(textInput: noteInput)
     }
 }
