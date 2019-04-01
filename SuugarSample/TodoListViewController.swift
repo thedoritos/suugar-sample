@@ -19,6 +19,11 @@ class TodoListViewController: UIViewController {
         Todo(id: "0", title: "Shirobako"),
         Todo(id: "1", title: "Tari Tari"),
         Todo(id: "2", title: "Hanasaku Iroha")
+//        ,
+//        Todo(id: "3", title: "Angel Beats!"),
+//        Todo(id: "4", title: "The Eccentric Family"),
+//        Todo(id: "5", title: "True Tears"),
+//        Todo(id: "6", title: "Glasslip")
     ]
 
     private let disposeBag = DisposeBag()

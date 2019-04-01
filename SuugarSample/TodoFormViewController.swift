@@ -25,7 +25,7 @@ class TodoFormViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
 
-    private let applyPicker: SuugarFunc<UITextField, Disposable> = {
+    private let pickerComposer: SuugarFunc<UITextField, Disposable> = {
         let picker = UIDatePicker()
         picker.datePickerMode = .date
         $0.inputView = picker
@@ -46,7 +46,7 @@ class TodoFormViewController: UIViewController {
             .bind(to: $0.rx.text)
     }
 
-    private let fillHorizontallyInSafeArea: SuugarBlock = {
+    private let safeWidthConfigurator: SuugarBlock = {
         guard let superView = $0.superview else { return }
         let inset = superView.safeAreaInsets
 
@@ -68,23 +68,22 @@ class TodoFormViewController: UIViewController {
                 contentView = $0.view {
                     $0.freeFrame()
                     $0.fillVertically()
-                    fillHorizontallyInSafeArea($0)
+                    $0.apply(safeWidthConfigurator)
 
                     $0.vstack {
                         $0.freeFrame()
                         $0.fillContainer(16)
 
-                        titleInput = $0.composite() {
+                        titleInput = $0.composite {
                             $0.placeholder = "Title"
                         }
 
-                        dueDateInput = $0.composite() {
+                        dueDateInput = $0.composite {
                             $0.placeholder = "Due Date"
-
-                            applyPicker($0).disposed(by: disposeBag)
+                            $0.apply(pickerComposer).disposed(by: disposeBag)
                         }
 
-                        noteInput = $0.composite() {
+                        noteInput = $0.composite {
                             $0.placeholder = "Note"
                         }
                     }
@@ -99,6 +98,6 @@ class TodoFormViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        contentView.style(fillHorizontallyInSafeArea)
+        contentView.apply(safeWidthConfigurator)
     }
 }
