@@ -525,7 +525,7 @@ PODS:
   - RxSwift (4.4.2):
     - RxAtomic (>= 4.4.2, ~> 4.4)
   - SteviaLayout (4.4.4)
-  - Suugar (0.1.1)
+  - Suugar (0.1.2)
 
 DEPENDENCIES:
   - MaterialComponents
@@ -533,7 +533,7 @@ DEPENDENCIES:
   - RxDataSources
   - RxSwift
   - SteviaLayout
-  - Suugar (from `../Suugar`)
+  - Suugar
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -549,10 +549,7 @@ SPEC REPOS:
     - RxDataSources
     - RxSwift
     - SteviaLayout
-
-EXTERNAL SOURCES:
-  Suugar:
-    :path: "../Suugar"
+    - Suugar
 
 SPEC CHECKSUMS:
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
@@ -567,8 +564,8 @@ SPEC CHECKSUMS:
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   SteviaLayout: 523469269059f2c6da02820bb2ff28a5fe0780aa
-  Suugar: 8f12fa11073be9f1e030fa56e996bec001d7536a
+  Suugar: e7654b7cedf99b42b26aac9a42ca983f3b8f4706
 
-PODFILE CHECKSUM: ceb451f7b555fbb20f89d4b7a30d3c97d81ada14
+PODFILE CHECKSUM: 3b0ad7a18357dcbfe6b58189be885e3fb197ce58
 
 COCOAPODS: 1.6.1

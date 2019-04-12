@@ -3,8 +3,7 @@
 target 'SuugarSample' do
   use_frameworks!
 
-  # pod 'Suugar', git: 'https://github.com/thedoritos/suugar'
-  pod 'Suugar', path: '../Suugar'
+  pod 'Suugar'
   pod 'MaterialComponents'
   pod 'SteviaLayout'
   pod 'RxSwift'
